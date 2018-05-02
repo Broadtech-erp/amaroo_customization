@@ -10,7 +10,8 @@
 Get default expense account and tax from vendor in invoice line
     """,
     'category': 'Custom',
-    'website': 'https://www.broadtech-innovations.com',
+    'author' : 'Amaroo Solutions',
+    'website': 'http://amaroosolutions.co.uk/',
     'images' : [],
     'depends' : ['account', 'purchase'],
     'data': [
