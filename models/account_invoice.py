@@ -4,6 +4,16 @@
 from odoo import api, fields, models, _
 
 
+class AccountInvoice(models.Model):
+    _inherit = 'account.invoice'
+    
+    @api.onchange('partner_id')
+    def _onchange_partner_id_currency(self):
+        if self.partner_id and self.partner_id.property_purchase_currency_id:
+            self.currency_id = self.partner_id.property_purchase_currency_id.id
+        return
+
+
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
 
